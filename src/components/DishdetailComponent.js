@@ -4,15 +4,6 @@ import '../App.css';
 
 
 class DishDetail extends Component{
-    
-    render(){
-        const {dish} = this.props;
-        return (
-            <div className="container">
-                {this.renderDish(dish)}
-            </div>
-        );
-    }
 
     renderDish=(dish)=>{
         if(dish!=null){
@@ -39,7 +30,6 @@ class DishDetail extends Component{
             return(<div></div>)
         }
     }
-
     renderComments = (comments) =>{
         if(comments!=null){
             const com = comments.map(co=>{
@@ -60,6 +50,15 @@ class DishDetail extends Component{
                 <div></div>
             )
         }
+    }
+    
+    render(){
+        const {dish} = this.props;
+        return (
+            <div className="container">
+                {this.renderDish(dish)}
+            </div>
+        );
     }
 
     formatDate(date){
